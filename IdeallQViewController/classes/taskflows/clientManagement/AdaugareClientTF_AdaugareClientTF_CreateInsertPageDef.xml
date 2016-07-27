@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31"
+                id="AdaugareClientTF_AdaugareClientTF_CreateInsertPageDef" Package="taskflows.clientManagement"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Clients" RangeSize="25" DataControl="IdealQAMDataControl" id="ClientsIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ClientsIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

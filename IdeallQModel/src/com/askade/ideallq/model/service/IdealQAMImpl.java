@@ -39,5 +39,13 @@ public class IdealQAMImpl extends ApplicationModuleImpl {
     public ViewLinkImpl getIndividualClientsVL() {
         return (ViewLinkImpl) findViewLink("IndividualClientsVL");
     }
+
+    /**
+     * Container's getter for ClientCategories1.
+     * @return ClientCategories1
+     */
+    public ViewObjectImpl getClientCategories() {
+        return (ViewObjectImpl) findViewObject("ClientCategories");
+    }
 }
 

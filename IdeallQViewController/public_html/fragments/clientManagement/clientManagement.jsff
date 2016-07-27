@@ -11,5 +11,6 @@
     <f:facet name="menuBar"/>
     <f:facet name="legend"/>
     <f:facet name="info"/>
+    
   </af:showDetailHeader>
 </ui:composition>

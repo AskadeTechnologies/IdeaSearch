@@ -9,16 +9,145 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">227.0</property>
+         name="start">false</property>
       <property
-         name="start">true</property>
+         name="x">528.0</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>addClientHeader&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="y">239.04004</property>
       <property
-         name="y">217.5459</property>
+         name="description">&lt;html>&lt;p>&lt;b>addClientHeader&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
          name="page">/fragments/clientManagement/addClientHeader.jsff</property>
       <property
+         name="trainStop">true</property>
+      <property
          name="exceptionHandler">false</property>
    </View>
+   <MethodCall
+      id="MethodCall5">
+      <property
+         name="activityId">refreshClientForm</property>
+      <property
+         name="x">327.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>refreshClientForm&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">230.89648</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="MethodCall5"
+      to="View2">
+      <property
+         name="fromOutcome">afterRefreshClientHeader</property>
+      <property
+         name="sdm:polyPoints">R50,368.0,230.5459,487.0,238.68945,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View7">
+      <property
+         name="activityId">addIndividualClient</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">757.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>addIndividualClient&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">251.84473</property>
+      <property
+         name="page">/fragments/clientManagement/addIndividualClient.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="trainStop">true</property>
+   </View>
+   <TrainFlow
+      islink="true"
+      id="TrainFlow8"
+      from="View2"
+      to="View7">
+      <property
+         name="sdm:polyPoints">R50,569.0,238.68945,716.0,251.49414,L50</property>
+   </TrainFlow>
+   <MethodCall
+      id="MethodCall12">
+      <property
+         name="activityId">CreateInsert</property>
+      <property
+         name="x">52.01465</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CreateInsert&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">144.39648</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase14"
+      from="MethodCall12"
+      to="MethodCall15">
+      <property
+         name="tosrcid">__2</property>
+      <property
+         name="fromOutcome">CreateInsertHeader</property>
+      <property
+         name="fromsrcid">__1</property>
+      <property
+         name="sdm:polyPoints">B50,52.01465,198.39648,145.35156,299.79883,L50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall15">
+      <property
+         name="activityId">CreateInsert1</property>
+      <property
+         name="x">186.35156</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CreateInsert1&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">300.1494</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="MethodCall15"
+      to="MethodCall5">
+      <property
+         name="fromOutcome">CreateInsert</property>
+      <property
+         name="sdm:polyPoints">R50,227.35156,299.79883,286.0,230.5459,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn17">
+      <property
+         name="activityId">salvare</property>
+      <property
+         name="x">912.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>salvare&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  salvare&lt;/p></property>
+      <property
+         name="y">382.84473</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="View7"
+      to="TaskFlowReturn17">
+      <property
+         name="fromOutcome">salvare</property>
+      <property
+         name="sdm:polyPoints">B50,757.0,305.49414,871.0,382.49414,L50</property>
+   </ControlFlowCase>
 </SDM>

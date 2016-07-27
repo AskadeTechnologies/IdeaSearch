@@ -7,7 +7,21 @@
     <f:facet name="menuBar"/>
     <f:facet name="legend"/>
     <f:facet name="info"/>
-    
-    
+    <af:train value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="t1"/>
+    <af:trainButtonBar value="#{controllerContext.currentViewPort.taskFlowContext.trainModel}" id="tbb1"/>
+    <af:panelFormLayout id="pfl1" binding="#{ClientsBean.clientHeaderForm}">
+      <af:inputText value="#{bindings.Denumire.inputValue}" label="#{bindings.Denumire.hints.label}"
+                    required="#{bindings.Denumire.hints.mandatory}" columns="#{bindings.Denumire.hints.displayWidth}"
+                    maximumLength="#{bindings.Denumire.hints.precision}" shortDesc="#{bindings.Denumire.hints.tooltip}"
+                    id="it1">
+        <f:validator binding="#{bindings.Denumire.validator}"/>
+      </af:inputText>
+      <af:selectOneChoice value="#{bindings.Categorie.inputValue}" label="#{bindings.Categorie.label}"
+                          required="#{bindings.Categorie.hints.mandatory}"
+                          shortDesc="#{bindings.Categorie.hints.tooltip}" id="soc1">
+        <f:selectItems value="#{bindings.Categorie.items}" id="si1"/>
+        <f:validator binding="#{bindings.Categorie.validator}"/>
+      </af:selectOneChoice>
+    </af:panelFormLayout>
   </af:showDetailHeader>
 </ui:composition>

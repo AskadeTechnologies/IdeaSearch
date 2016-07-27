@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="ClientSetup">
+    <default-activity>clientSetup</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="clientSetup">
+      <page>/fragments/applicationManagement/clients/clientSetup.jsff</page>
+    </view>
+    <view id="clientCategories">
+      <page>/fragments/applicationManagement/clients/ClientCategories.jsff</page>
+    </view>
+    <task-flow-return id="backToParent">
+      <outcome>
+        <name>backToParent</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>clientSetup</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toClientCategories</from-outcome>
+        <to-activity-id>clientCategories</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>backToParent</from-outcome>
+        <to-activity-id>backToParent</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>clientSetup</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

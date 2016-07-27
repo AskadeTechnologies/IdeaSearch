@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:showDetailHeader text="Client Categories" disclosed="true" id="sdh1">
+    <f:facet name="context"/>
+    <f:facet name="toolbar">
+      <af:toolbar id="t2">
+        <af:button text="Back" id="b1" action="back"/>
+        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Adauga"
+                   disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+        <af:button actionListener="#{bindings.Commit.execute}" text="Salveaza" disabled="#{!bindings.Commit.enabled}"
+                   id="b3"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="menuBar"/>
+    <f:facet name="legend"/>
+    <f:facet name="info"/>
+    <af:table value="#{bindings.ClientCategories.collectionModel}" var="row"
+              rows="#{bindings.ClientCategories.rangeSize}"
+              emptyText="#{bindings.ClientCategories.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.ClientCategories.collectionModel.selectedRow}"
+              selectionListener="#{bindings.ClientCategories.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.ClientCategories.rangeSize}"
+              filterModel="#{bindings.ClientCategoriesQuery.queryDescriptor}" filterVisible="true"
+              queryListener="#{bindings.ClientCategoriesQuery.processQuery}" varStatus="vs" id="t1"
+              partialTriggers="::b2">
+      <af:column sortProperty="#{bindings.ClientCategories.hints.CategoryCode.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ClientCategories.hints.CategoryCode.label}" id="c1">
+        <af:inputText value="#{row.bindings.CategoryCode.inputValue}"
+                      label="#{bindings.ClientCategories.hints.CategoryCode.label}"
+                      required="#{bindings.ClientCategories.hints.CategoryCode.mandatory}"
+                      columns="#{bindings.ClientCategories.hints.CategoryCode.displayWidth}"
+                      maximumLength="#{bindings.ClientCategories.hints.CategoryCode.precision}"
+                      shortDesc="#{bindings.ClientCategories.hints.CategoryCode.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.CategoryCode.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientCategories.hints.Description.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ClientCategories.hints.Description.label}" id="c2">
+        <af:inputText value="#{row.bindings.Description.inputValue}"
+                      label="#{bindings.ClientCategories.hints.Description.label}"
+                      required="#{bindings.ClientCategories.hints.Description.mandatory}"
+                      columns="#{bindings.ClientCategories.hints.Description.displayWidth}"
+                      maximumLength="#{bindings.ClientCategories.hints.Description.precision}"
+                      shortDesc="#{bindings.ClientCategories.hints.Description.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.Description.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientCategories.hints.DataIn.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ClientCategories.hints.DataIn.label}" id="c3">
+        <f:facet name="filter">
+          <af:inputDate value="#{bindings.ClientCategoriesQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.DataIn.value}"
+                        id="id1">
+            <af:convertDateTime pattern="#{bindings.ClientCategories.hints.DataIn.format}"/>
+          </af:inputDate>
+        </f:facet>
+        <af:inputDate value="#{row.bindings.DataIn.inputValue}" label="#{bindings.ClientCategories.hints.DataIn.label}"
+                      required="#{bindings.ClientCategories.hints.DataIn.mandatory}"
+                      columns="#{bindings.ClientCategories.hints.DataIn.displayWidth}"
+                      shortDesc="#{bindings.ClientCategories.hints.DataIn.tooltip}" id="id2">
+          <f:validator binding="#{row.bindings.DataIn.validator}"/>
+          <af:convertDateTime pattern="#{bindings.ClientCategories.hints.DataIn.format}"/>
+        </af:inputDate>
+      </af:column>
+      <af:column sortProperty="#{bindings.ClientCategories.hints.DataOut.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.ClientCategories.hints.DataOut.label}" id="c4">
+        <f:facet name="filter">
+          <af:inputDate value="#{bindings.ClientCategoriesQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.DataOut.value}"
+                        id="id3">
+            <af:convertDateTime pattern="#{bindings.ClientCategories.hints.DataOut.format}"/>
+          </af:inputDate>
+        </f:facet>
+        <af:inputDate value="#{row.bindings.DataOut.inputValue}"
+                      label="#{bindings.ClientCategories.hints.DataOut.label}"
+                      required="#{bindings.ClientCategories.hints.DataOut.mandatory}"
+                      columns="#{bindings.ClientCategories.hints.DataOut.displayWidth}"
+                      shortDesc="#{bindings.ClientCategories.hints.DataOut.tooltip}" id="id4">
+          <f:validator binding="#{row.bindings.DataOut.validator}"/>
+          <af:convertDateTime pattern="#{bindings.ClientCategories.hints.DataOut.format}"/>
+        </af:inputDate>
+      </af:column>
+    </af:table>
+  </af:showDetailHeader>
+</ui:composition>

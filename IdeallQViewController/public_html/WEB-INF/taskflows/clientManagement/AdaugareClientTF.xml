@@ -1,13 +1,76 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="AdaugareClientTF">
-    <default-activity>addClientHeader</default-activity>
+    <default-activity>CreateInsert</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
     <data-control-scope>
-      <shared/>
+      <isolated/>
     </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>ClientsBean</managed-bean-name>
+      <managed-bean-class>com.askade.ideallq.view.beans.clients.ClientsBean</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <view id="addClientHeader">
       <page>/fragments/clientManagement/addClientHeader.jsff</page>
+      <train-stop/>
     </view>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsertHeader</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="refreshClientForm">
+      <method>#{requestScope.ClientsBean.refreshClientForm}</method>
+    </method-call>
+    <view id="addIndividualClient">
+      <page>/fragments/clientManagement/addIndividualClient.jsff</page>
+      <train-stop/>
+    </view>
+    <method-call id="CreateInsert1">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="salvare">
+      <outcome>
+        <name>salvare</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <train/>
+    <control-flow-rule id="__1">
+      <from-activity-id>CreateInsert</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>CreateInsertHeader</from-outcome>
+        <to-activity-id>CreateInsert1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>refreshClientForm</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>afterRefreshClientHeader</from-outcome>
+        <to-activity-id>addClientHeader</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__6">
+      <from-activity-id>CreateInsert1</from-activity-id>
+      <control-flow-case id="__7">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>refreshClientForm</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__8">
+      <from-activity-id>addIndividualClient</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome>salvare</from-outcome>
+        <to-activity-id>salvare</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

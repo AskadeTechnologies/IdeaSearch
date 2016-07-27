@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:showDetailHeader text="Add Individual Client" disclosed="true" id="sdh1">
+    <f:facet name="context"/>
+    <f:facet name="toolbar">
+      <af:toolbar id="t1">
+        <af:button text="Salvare" id="b1" action="salvare"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="menuBar"/>
+    <f:facet name="legend"/>
+    <f:facet name="info"/>
+    <af:panelFormLayout id="pfl1" binding="#{ClientsBean.clientIndividualForm}">
+      <af:inputText value="#{bindings.Nume.inputValue}" label="#{bindings.Nume.hints.label}"
+                    required="#{bindings.Nume.hints.mandatory}" columns="#{bindings.Nume.hints.displayWidth}"
+                    maximumLength="#{bindings.Nume.hints.precision}" shortDesc="#{bindings.Nume.hints.tooltip}"
+                    id="it1">
+        <f:validator binding="#{bindings.Nume.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Prenume.inputValue}" label="#{bindings.Prenume.hints.label}"
+                    required="#{bindings.Prenume.hints.mandatory}" columns="#{bindings.Prenume.hints.displayWidth}"
+                    maximumLength="#{bindings.Prenume.hints.precision}" shortDesc="#{bindings.Prenume.hints.tooltip}"
+                    id="it2">
+        <f:validator binding="#{bindings.Prenume.validator}"/>
+      </af:inputText>
+      <af:inputText value="#{bindings.Cnp.inputValue}" label="#{bindings.Cnp.hints.label}"
+                    required="#{bindings.Cnp.hints.mandatory}" columns="#{bindings.Cnp.hints.displayWidth}"
+                    maximumLength="#{bindings.Cnp.hints.precision}" shortDesc="#{bindings.Cnp.hints.tooltip}" id="it3">
+        <f:validator binding="#{bindings.Cnp.validator}"/>
+      </af:inputText>
+      <af:inputDate value="#{bindings.BirthDate.inputValue}" label="#{bindings.BirthDate.hints.label}"
+                    required="#{bindings.BirthDate.hints.mandatory}" columns="#{bindings.BirthDate.hints.displayWidth}"
+                    shortDesc="#{bindings.BirthDate.hints.tooltip}" id="id1">
+        <f:validator binding="#{bindings.BirthDate.validator}"/>
+        <af:convertDateTime pattern="#{bindings.BirthDate.format}"/>
+      </af:inputDate>
+    </af:panelFormLayout>
+  </af:showDetailHeader>
+</ui:composition>
