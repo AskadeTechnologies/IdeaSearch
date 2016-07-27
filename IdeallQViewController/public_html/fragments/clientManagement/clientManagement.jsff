@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:showDetailHeader text="Client Management" disclosed="true" id="sdh1">
+    <f:facet name="context"/>
+    <f:facet name="toolbar">
+      <af:toolbar id="t1">
+        <af:button text="Add Client" id="b1" action="toAddClient"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="menuBar"/>
+    <f:facet name="legend"/>
+    <f:facet name="info"/>
+  </af:showDetailHeader>
+</ui:composition>

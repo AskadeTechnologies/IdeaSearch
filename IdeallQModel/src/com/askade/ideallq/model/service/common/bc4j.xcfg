@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.askade.ideallq.model.service.IdealQAM">
+      <AppModuleConfig name="IdealQAMLocal" ApplicationName="com.askade.ideallq.model.service.IdealQAM" DeployPlatform="LOCAL" jbo.project="com.askade.ideallq.model.IdeallQModel">
+         <Database jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="com.askade.ideallq.model.service.IdealQAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/MySqlDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="IdealQAMShared" ApplicationName="com.askade.ideallq.model.service.IdealQAM" DeployPlatform="LOCAL" jbo.project="com.askade.ideallq.model.IdeallQModel">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Database jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver" jbo.TypeMapEntries="Java" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="com.askade.ideallq.model.service.IdealQAM"/>
+         <Custom ns0:JDBCDataSource="java:comp/env/jdbc/MySqlDS" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
