@@ -70,6 +70,8 @@ public class ClientCategoriesEOImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal id) {
         return new Key(new Object[] { id });
+        //test
+        //marius
     }
 
     /**
