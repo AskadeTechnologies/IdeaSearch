@@ -1,6 +1,8 @@
 package com.askade.ideallq.model.overide;
 
 
+import java.math.BigDecimal;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -49,7 +51,7 @@ public class IdealQEntityImpl extends EntityImpl {
                 stmt.execute();
                 try (ResultSet rs = stmt.getResultSet()) {
                     if (rs.next()) {
-                        setAttribute(pk.getName(), rs.getInt(1));
+                        setAttribute(pk.getName(), new BigDecimal(rs.getInt(1)));
                     }
                 }
             } catch (SQLException e) {

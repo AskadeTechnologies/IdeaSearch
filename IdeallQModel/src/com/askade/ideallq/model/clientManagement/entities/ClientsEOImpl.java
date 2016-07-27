@@ -1,5 +1,7 @@
 package com.askade.ideallq.model.clientManagement.entities;
 
+import com.askade.ideallq.model.overide.IdealQEntityImpl;
+
 import java.math.BigDecimal;
 
 import oracle.jbo.Key;
@@ -11,7 +13,7 @@ import oracle.jbo.server.EntityImpl;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class ClientsEOImpl extends EntityImpl {
+public class ClientsEOImpl extends IdealQEntityImpl {
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */

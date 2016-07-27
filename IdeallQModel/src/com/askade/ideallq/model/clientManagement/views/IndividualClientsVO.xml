@@ -19,7 +19,7 @@
     Entity="com.askade.ideallq.model.clientManagement.entities.IndividualClientsEO"/>
   <ViewAttribute
     Name="ClientId"
-    IsNotNull="true"
+    IsNotNull="false"
     PrecisionRule="true"
     EntityAttrName="ClientId"
     EntityUsage="IndividualClientsEO"

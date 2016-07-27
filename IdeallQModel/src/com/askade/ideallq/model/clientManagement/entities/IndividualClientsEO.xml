@@ -16,13 +16,13 @@
   </DesignTime>
   <Attribute
     Name="ClientId"
-    IsNotNull="true"
     ColumnName="client_id"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     TableName="xxidq_individual_clients"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    Domain="com.askade.ideallq.model.properties.AutoIncrementProperty">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>

@@ -19,7 +19,7 @@
     Entity="com.askade.ideallq.model.applicationManagement.entities.ClientCategoriesEO"/>
   <ViewAttribute
     Name="Id"
-    IsNotNull="true"
+    IsNotNull="false"
     PrecisionRule="true"
     EntityAttrName="Id"
     EntityUsage="ClientCategoriesEO"

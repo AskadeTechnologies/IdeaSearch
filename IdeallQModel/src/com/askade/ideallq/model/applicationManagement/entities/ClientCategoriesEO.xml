@@ -16,15 +16,13 @@
   </DesignTime>
   <Attribute
     Name="Id"
-    IsNotNull="true"
     ColumnName="id"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     TableName="xxidq_client_categories"
     PrimaryKey="true"
-    RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
+    Domain="com.askade.ideallq.model.properties.AutoIncrementProperty">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>
@@ -81,7 +79,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="xxidq_client_categories">
+    TableName="xxidq_client_categories"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -100,7 +100,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="xxidq_client_categories">
+    TableName="xxidq_client_categories"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>

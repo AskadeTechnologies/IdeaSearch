@@ -13,12 +13,26 @@
                     <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1" partialTriggers="::l1 ::l2"/>
                 </f:facet>
                 <f:facet name="start">
-                    <af:link text="ApplicationManagementTF"
-                             action="#{pageFlowScope.DynamicRegionBean.applicationManagementTF}" id="l1"/>
-                    <af:link text="ClientManagementTFxml"
-                             action="#{pageFlowScope.DynamicRegionBean.clientManagementTFxml}" id="l2"/>
+                    <af:showDetailHeader text="Menu" disclosed="true" id="sdh1">
+                        <f:facet name="context"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="menuBar"/>
+                        <f:facet name="legend"/>
+                        <f:facet name="info"/>
+                        <af:panelGroupLayout layout="vertical">
+                        
+                            <af:link text="ApplicationManagementTF"
+                                     action="#{pageFlowScope.DynamicRegionBean.applicationManagementTF}" id="l1"/>
+                            <af:spacer width="10" height="10" id="s1"/>
+                            <af:link text="ClientManagementTFxml"
+                                     action="#{pageFlowScope.DynamicRegionBean.clientManagementTFxml}" id="l2"/>
+                        </af:panelGroupLayout>
+                    </af:showDetailHeader>
                 </f:facet>
                 <f:facet name="end"/>
+                 <f:attribute name="logoImagePath" value="img/idealq.png"/>
+        <f:attribute name="logoSmallImagePath" value="img/idealq.png"/>
+        <f:attribute name="showFooter" value="true"/>
             </af:pageTemplate>
         </af:form>
     </af:document>

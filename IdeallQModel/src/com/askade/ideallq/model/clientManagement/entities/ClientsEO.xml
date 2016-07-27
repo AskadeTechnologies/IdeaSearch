@@ -16,23 +16,16 @@
   </DesignTime>
   <Attribute
     Name="ClientId"
-    IsNotNull="true"
     ColumnName="client_id"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="BIGINT"
     TableName="xxidq_clients"
-    PrimaryKey="true">
+    PrimaryKey="true"
+    Domain="com.askade.ideallq.model.properties.AutoIncrementProperty">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="19"/>
     </DesignTime>
-    <Properties>
-      <CustomProperties>
-        <Property
-          Name="AI"
-          Value="true"/>
-      </CustomProperties>
-    </Properties>
   </Attribute>
   <Attribute
     Name="Denumire"
@@ -71,7 +64,9 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="xxidq_clients">
+    TableName="xxidq_clients"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
@@ -90,7 +85,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"
-    TableName="xxidq_clients">
+    TableName="xxidq_clients"
+    HistoryColumn="UserHistory">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
