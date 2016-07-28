@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.askade.ideallq.model.nlp;
 
 import java.io.File;
@@ -121,7 +115,7 @@ public class NLPUtils {
         System.out.println("POS Test: ");
         StringBuilder results = new StringBuilder();
         
-        POSModel model = new POSModelLoader().load(new File("/Users/mariuscealera/NetBeansProjects/RestTesting/resources/en-pos-maxent.bin"));
+        POSModel model = new POSModelLoader().load(new File("../resources/en-pos-maxent.bin"));
     PerformanceMonitor perfMon = new PerformanceMonitor(System.err, "sent");
     POSTaggerME tagger = new POSTaggerME(model);
 
