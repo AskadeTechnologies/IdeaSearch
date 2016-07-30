@@ -8,6 +8,19 @@
     <view id="clientManagement">
       <page>/fragments/clientManagement/clientManagement.jsff</page>
     </view>
+    <task-flow-call id="AdaugareClientTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflows/clientManagement/AdaugareClientTF.xml</document>
+        <id>AdaugareClientTF</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>clientManagement</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toAddClient</from-outcome>
+        <to-activity-id>AdaugareClientTF</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
     <use-page-fragments/>
   </task-flow-definition>
 </adfc-config>

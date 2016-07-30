@@ -9,16 +9,43 @@
       <property
          name="pageFragment">true</property>
       <property
-         name="x">204.0</property>
+         name="x">203.0</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>clientManagement&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">297.5459</property>
+         name="y">316.98828</property>
       <property
          name="page">/fragments/clientManagement/clientManagement.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>AdaugareClientTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">AdaugareClientTF</property>
+      <property
+         name="x">592.6992</property>
+      <property
+         name="y">313.1494</property>
+      <property
+         name="documentReference">/WEB-INF/taskflows/clientManagement/AdaugareClientTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">AdaugareClientTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">toAddClient</property>
+      <property
+         name="sdm:polyPoints">R50,244.0,316.6377,551.6992,312.79883,L50</property>
+   </ControlFlowCase>
 </SDM>

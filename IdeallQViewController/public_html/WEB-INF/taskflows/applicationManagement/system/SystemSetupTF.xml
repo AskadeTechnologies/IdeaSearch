@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="SystemSetupTF">
+    <default-activity>systemSetup</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="systemSetup">
+      <page>/fragments/applicationManagement/system/systemSetup.jsff</page>
+    </view>
+    <view id="systemLanguages">
+      <page>/fragments/applicationManagement/system/systemLanguages.jsff</page>
+    </view>
+    <task-flow-return id="returnToParent">
+      <outcome>
+        <name>returnToParent</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__1">
+      <from-activity-id>systemSetup</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>toSystemLanguages</from-outcome>
+        <to-activity-id>systemLanguages</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__5">
+        <from-outcome>backToParent</from-outcome>
+        <to-activity-id>returnToParent</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>back</from-outcome>
+        <to-activity-id>systemSetup</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

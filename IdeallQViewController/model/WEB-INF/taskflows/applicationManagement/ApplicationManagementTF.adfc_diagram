@@ -15,7 +15,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>applicationManagement&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">198.5459</property>
+         name="y">198.19531</property>
       <property
          name="page">/fragments/applicationManagement/applicationManagement.jsff</property>
       <property
@@ -46,6 +46,33 @@
       <property
          name="fromOutcome">toClientSetup</property>
       <property
-         name="sdm:polyPoints">R50,526.0,198.19531,803.01953,162.09766,L50</property>
+         name="sdm:polyPoints">R46,526.0,194.34473,803.01953,162.09766,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall5">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SystemSetupTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">SystemSetupTF</property>
+      <property
+         name="x">836.0137</property>
+      <property
+         name="y">336.1494</property>
+      <property
+         name="documentReference">/WEB-INF/taskflows/applicationManagement/system/SystemSetupTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">SystemSetupTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowCall5">
+      <property
+         name="fromOutcome">toSystemSetup</property>
+      <property
+         name="sdm:polyPoints">R54,526.0,201.34473,795.0137,335.79883,L50</property>
    </ControlFlowCase>
 </SDM>

@@ -23,5 +23,90 @@
         <f:validator binding="#{bindings.Categorie.validator}"/>
       </af:selectOneChoice>
     </af:panelFormLayout>
+    <af:panelBox text="Client Credentials" id="pb1">
+      <f:facet name="toolbar">
+        <af:toolbar id="t2">
+          <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                     disabled="#{!bindings.CreateInsert.enabled}" id="b1" icon="/img/add.png"/>
+        </af:toolbar>
+      </f:facet>
+      <af:table value="#{bindings.ClientCredentials.collectionModel}" var="row"
+                rows="#{bindings.ClientCredentials.rangeSize}"
+                emptyText="#{bindings.ClientCredentials.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.ClientCredentials.collectionModel.selectedRow}"
+                selectionListener="#{bindings.ClientCredentials.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.ClientCredentials.rangeSize}"
+                filterModel="#{bindings.ClientCredentialsQuery.queryDescriptor}" filterVisible="true"
+                queryListener="#{bindings.ClientCredentialsQuery.processQuery}" varStatus="vs" id="t3"
+                partialTriggers="::b1">
+        <af:column sortProperty="#{bindings.ClientCredentials.hints.UserName.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ClientCredentials.hints.UserName.label}" id="c1">
+          <af:inputText value="#{row.bindings.UserName.inputValue}"
+                        label="#{bindings.ClientCredentials.hints.UserName.label}"
+                        required="#{bindings.ClientCredentials.hints.UserName.mandatory}"
+                        columns="#{bindings.ClientCredentials.hints.UserName.displayWidth}"
+                        maximumLength="#{bindings.ClientCredentials.hints.UserName.precision}"
+                        shortDesc="#{bindings.ClientCredentials.hints.UserName.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.UserName.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ClientCredentials.hints.EncrPassword.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ClientCredentials.hints.EncrPassword.label}" id="c2">
+          <af:inputText value="#{row.bindings.EncrPassword.inputValue}"
+                        label="#{bindings.ClientCredentials.hints.EncrPassword.label}"
+                        required="#{bindings.ClientCredentials.hints.EncrPassword.mandatory}"
+                        columns="#{bindings.ClientCredentials.hints.EncrPassword.displayWidth}"
+                        maximumLength="#{bindings.ClientCredentials.hints.EncrPassword.precision}"
+                        shortDesc="#{bindings.ClientCredentials.hints.EncrPassword.tooltip}" id="it3">
+            <f:validator binding="#{row.bindings.EncrPassword.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ClientCredentials.hints.SocialMediaAccount.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ClientCredentials.hints.SocialMediaAccount.label}" id="c3">
+          <af:inputText value="#{row.bindings.SocialMediaAccount.inputValue}"
+                        label="#{bindings.ClientCredentials.hints.SocialMediaAccount.label}"
+                        required="#{bindings.ClientCredentials.hints.SocialMediaAccount.mandatory}"
+                        columns="#{bindings.ClientCredentials.hints.SocialMediaAccount.displayWidth}"
+                        maximumLength="#{bindings.ClientCredentials.hints.SocialMediaAccount.precision}"
+                        shortDesc="#{bindings.ClientCredentials.hints.SocialMediaAccount.tooltip}" id="it4">
+            <f:validator binding="#{row.bindings.SocialMediaAccount.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column sortProperty="#{bindings.ClientCredentials.hints.DataIn.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ClientCredentials.hints.DataIn.label}" id="c4">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.ClientCredentialsQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.DataIn.value}"
+                          id="id1">
+              <af:convertDateTime pattern="#{bindings.ClientCredentials.hints.DataIn.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DataIn.inputValue}"
+                        label="#{bindings.ClientCredentials.hints.DataIn.label}"
+                        required="#{bindings.ClientCredentials.hints.DataIn.mandatory}"
+                        columns="#{bindings.ClientCredentials.hints.DataIn.displayWidth}"
+                        shortDesc="#{bindings.ClientCredentials.hints.DataIn.tooltip}" id="id2">
+            <f:validator binding="#{row.bindings.DataIn.validator}"/>
+            <af:convertDateTime pattern="#{bindings.ClientCredentials.hints.DataIn.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column sortProperty="#{bindings.ClientCredentials.hints.DataOut.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ClientCredentials.hints.DataOut.label}" id="c5">
+          <f:facet name="filter">
+            <af:inputDate value="#{bindings.ClientCredentialsQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.DataOut.value}"
+                          id="id3">
+              <af:convertDateTime pattern="#{bindings.ClientCredentials.hints.DataOut.format}"/>
+            </af:inputDate>
+          </f:facet>
+          <af:inputDate value="#{row.bindings.DataOut.inputValue}"
+                        label="#{bindings.ClientCredentials.hints.DataOut.label}"
+                        required="#{bindings.ClientCredentials.hints.DataOut.mandatory}"
+                        columns="#{bindings.ClientCredentials.hints.DataOut.displayWidth}"
+                        shortDesc="#{bindings.ClientCredentials.hints.DataOut.tooltip}" id="id4">
+            <f:validator binding="#{row.bindings.DataOut.validator}"/>
+            <af:convertDateTime pattern="#{bindings.ClientCredentials.hints.DataOut.format}"/>
+          </af:inputDate>
+        </af:column>
+      </af:table>
+    </af:panelBox>
   </af:showDetailHeader>
 </ui:composition>

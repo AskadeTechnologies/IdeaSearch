@@ -25,6 +25,9 @@
     </method-call>
     <method-call id="refreshClientForm">
       <method>#{requestScope.ClientsBean.refreshClientForm}</method>
+      <outcome>
+        <fixed-outcome>afterRefreshClientForm</fixed-outcome>
+      </outcome>
     </method-call>
     <view id="addIndividualClient">
       <page>/fragments/clientManagement/addIndividualClient.jsff</page>
@@ -53,7 +56,7 @@
     <control-flow-rule id="__4">
       <from-activity-id>refreshClientForm</from-activity-id>
       <control-flow-case id="__5">
-        <from-outcome>afterRefreshClientHeader</from-outcome>
+        <from-outcome>afterRefreshClientForm</from-outcome>
         <to-activity-id>addClientHeader</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
@@ -61,7 +64,7 @@
       <from-activity-id>CreateInsert1</from-activity-id>
       <control-flow-case id="__7">
         <from-outcome>CreateInsert</from-outcome>
-        <to-activity-id>refreshClientForm</to-activity-id>
+        <to-activity-id>addClientHeader</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__8">

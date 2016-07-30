@@ -35,6 +35,13 @@
         <f:validator binding="#{bindings.BirthDate.validator}"/>
         <af:convertDateTime pattern="#{bindings.BirthDate.format}"/>
       </af:inputDate>
+      <af:inputText value="#{bindings.ClientId.inputValue}" label="#{bindings.ClientId.hints.label}"
+                    required="#{bindings.ClientId.hints.mandatory}" columns="#{bindings.ClientId.hints.displayWidth}"
+                    maximumLength="#{bindings.ClientId.hints.precision}" shortDesc="#{bindings.ClientId.hints.tooltip}"
+                    id="it4">
+        <f:validator binding="#{bindings.ClientId.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.ClientId.format}"/>
+      </af:inputText>
     </af:panelFormLayout>
   </af:showDetailHeader>
 </ui:composition>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ClientCategoriesTLEDVO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.askade.ideallq.model.applicationManagement.views.ClientCategoriesTLEDVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="ClientCategoriesTLEO"
+    Entity="com.askade.ideallq.model.applicationManagement.entities.ClientCategoriesTLEO"/>
+  <EntityUsage
+    Name="ClientCategoriesEO"
+    Entity="com.askade.ideallq.model.applicationManagement.entities.ClientCategoriesEO"
+    Association="com.askade.ideallq.model.applicationManagement.associations.ClientCategoriesTLAsoc"
+    AssociationEnd="com.askade.ideallq.model.applicationManagement.associations.ClientCategoriesTLAsoc.ClientCategories"
+    SourceUsage="com.askade.ideallq.model.applicationManagement.views.ClientCategoriesTLEDVO.ClientCategoriesTLEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="com.askade.ideallq.model.applicationManagement.entities.ClientCategoriesEO.CategoryCode"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="com.askade.ideallq.model.applicationManagement.entities.ClientCategoriesTLEO.CategoryCode"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="CategoryCode"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    EntityAttrName="CategoryCode"
+    EntityUsage="ClientCategoriesEO"
+    AliasName="category_code"/>
+  <ViewAttribute
+    Name="Id"
+    IsUpdateable="false"
+    PrecisionRule="true"
+    Domain="com.askade.ideallq.model.properties.AutoIncrementProperty"
+    EntityAttrName="Id"
+    EntityUsage="ClientCategoriesEO"
+    AliasName="id"/>
+  <ViewAttribute
+    Name="DataIn"
+    PrecisionRule="true"
+    EntityAttrName="DataIn"
+    EntityUsage="ClientCategoriesEO"
+    AliasName="data_in"/>
+  <ViewAttribute
+    Name="DataOut"
+    PrecisionRule="true"
+    EntityAttrName="DataOut"
+    EntityUsage="ClientCategoriesEO"
+    AliasName="data_out"/>
+  <ViewAttribute
+    Name="Description"
+    PrecisionRule="true"
+    EntityAttrName="Description"
+    EntityUsage="ClientCategoriesTLEO"
+    AliasName="description"/>
+  <ViewAttribute
+    Name="Id1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Domain="com.askade.ideallq.model.properties.AutoIncrementProperty"
+    EntityAttrName="Id"
+    EntityUsage="ClientCategoriesTLEO"
+    AliasName="Id1"/>
+  <ViewAttribute
+    Name="Language"
+    PrecisionRule="true"
+    EntityAttrName="Language"
+    EntityUsage="ClientCategoriesTLEO"
+    AliasName="language"/>
+  <ViewAttribute
+    Name="CategoryCode1"
+    PrecisionRule="true"
+    EntityAttrName="CategoryCode"
+    EntityUsage="ClientCategoriesTLEO"
+    AliasName="Category_Code1"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.askade.ideallq.model.IdeallQModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

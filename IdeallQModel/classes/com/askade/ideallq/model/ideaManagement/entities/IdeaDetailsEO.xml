@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="IdeaDetailsEO"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="xxidq_idea_details"
+  AliasName="IdeaDetailsEO"
+  BindingStyle="JDBC"
+  RowClass="com.askade.ideallq.model.ideaManagement.entities.IdeaDetailsEOImpl">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="id"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="xxidq_idea_details"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IdeaId"
+    ColumnName="idea_id"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="xxidq_idea_details">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="KeyWordId"
+    ColumnName="key_word_id"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="xxidq_idea_details">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreationDate"
+    ColumnName="creation_date"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="xxidq_idea_details"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="100"
+    ColumnName="created_by"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="xxidq_idea_details">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdateDate"
+    ColumnName="last_update_date"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="xxidq_idea_details"/>
+  <Attribute
+    Name="LastUpdatedBy"
+    Precision="100"
+    ColumnName="last_updated_by"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="xxidq_idea_details">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="IdeaHeader"
+    Association="com.askade.ideallq.model.ideaManagement.associations.IdeaDetailsAsoc"
+    AssociationEnd="com.askade.ideallq.model.ideaManagement.associations.IdeaDetailsAsoc.IdeaHeader"
+    AssociationOtherEnd="com.askade.ideallq.model.ideaManagement.associations.IdeaDetailsAsoc.IdeaDetails"
+    Type="com.askade.ideallq.model.ideaManagement.entities.IdeaHeaderEOImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.askade.ideallq.model.ideaManagement.entities.IdeaDetailsEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -47,5 +47,46 @@ public class IdealQAMImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getClientCategories() {
         return (ViewObjectImpl) findViewObject("ClientCategories");
     }
+
+
+    /**
+     * Container's getter for Languages1.
+     * @return Languages1
+     */
+    public ViewObjectImpl getLanguages() {
+        return (ViewObjectImpl) findViewObject("Languages");
+    }
+
+    /**
+     * Container's getter for ClientCredentials1.
+     * @return ClientCredentials1
+     */
+    public ViewObjectImpl getClientCredentials() {
+        return (ViewObjectImpl) findViewObject("ClientCredentials");
+    }
+
+    /**
+     * Container's getter for ClientCredentialsVL1.
+     * @return ClientCredentialsVL1
+     */
+    public ViewLinkImpl getClientCredentialsVL() {
+        return (ViewLinkImpl) findViewLink("ClientCredentialsVL");
+    }
+
+    /**
+     * Container's getter for ClientCategoriesTL1.
+     * @return ClientCategoriesTL1
+     */
+    public ViewObjectImpl getClientCategoriesTL() {
+        return (ViewObjectImpl) findViewObject("ClientCategoriesTL");
+    }
+
+    /**
+     * Container's getter for ClientCategoriesTLVL1.
+     * @return ClientCategoriesTLVL1
+     */
+    public ViewLinkImpl getClientCategoriesTLVL() {
+        return (ViewLinkImpl) findViewLink("ClientCategoriesTLVL");
+    }
 }
 

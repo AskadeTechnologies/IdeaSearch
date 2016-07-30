@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="ResourceRegistry"
+             SeparateXMLFiles="false" Package="com.askade.ideallq.model" ClientType="Generic">
+  <pageMap>
+    <page path="v1_Clients" usageId="v1_IdealQAM_ClientsVOResources"/>
+  </pageMap>
+  <dataControlUsages>
+    <BC4JDataControl id="IdealQAMDataControl" Package="com.askade.ideallq.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="IdealQAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+  <pageDefinitionUsages>
+    <page id="v1_IdealQAM_ClientsVOResources"
+          path="com.askade.ideallq.model.service.rest.v1.IdealQAM_ClientsVOResources"/>
+  </pageDefinitionUsages>
+</Application>

@@ -25,7 +25,8 @@ public class ClientsEOImpl extends IdealQEntityImpl {
         CreatedBy,
         LastUpdateDate,
         LastUpdatedBy,
-        IndividualClients;
+        IndividualClients,
+        ClientCredentials;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -58,6 +59,7 @@ public class ClientsEOImpl extends IdealQEntityImpl {
     public static final int LASTUPDATEDATE = AttributesEnum.LastUpdateDate.index();
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
     public static final int INDIVIDUALCLIENTS = AttributesEnum.IndividualClients.index();
+    public static final int CLIENTCREDENTIALS = AttributesEnum.ClientCredentials.index();
 
     /**
      * This is the default constructor (do not remove).

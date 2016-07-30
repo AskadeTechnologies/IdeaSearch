@@ -5,11 +5,11 @@
     <f:facet name="context"/>
     <f:facet name="toolbar">
       <af:toolbar id="t2">
-        <af:button text="Back" id="b1" action="back"/>
+        <af:button text="Back" id="b1" action="back" icon="/img/back.png"/>
         <af:button actionListener="#{bindings.CreateInsert.execute}" text="Adauga"
-                   disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
+                   disabled="#{!bindings.CreateInsert.enabled}" id="b2" icon="/img/add.png"/>
         <af:button actionListener="#{bindings.Commit.execute}" text="Salveaza" disabled="#{!bindings.Commit.enabled}"
-                   id="b3"/>
+                   id="b3" icon="/img/save.png"/>
       </af:toolbar>
     </f:facet>
     <f:facet name="menuBar"/>
@@ -33,17 +33,6 @@
                       maximumLength="#{bindings.ClientCategories.hints.CategoryCode.precision}"
                       shortDesc="#{bindings.ClientCategories.hints.CategoryCode.tooltip}" id="it1">
           <f:validator binding="#{row.bindings.CategoryCode.validator}"/>
-        </af:inputText>
-      </af:column>
-      <af:column sortProperty="#{bindings.ClientCategories.hints.Description.name}" filterable="true" sortable="true"
-                 headerText="#{bindings.ClientCategories.hints.Description.label}" id="c2">
-        <af:inputText value="#{row.bindings.Description.inputValue}"
-                      label="#{bindings.ClientCategories.hints.Description.label}"
-                      required="#{bindings.ClientCategories.hints.Description.mandatory}"
-                      columns="#{bindings.ClientCategories.hints.Description.displayWidth}"
-                      maximumLength="#{bindings.ClientCategories.hints.Description.precision}"
-                      shortDesc="#{bindings.ClientCategories.hints.Description.tooltip}" id="it2">
-          <f:validator binding="#{row.bindings.Description.validator}"/>
         </af:inputText>
       </af:column>
       <af:column sortProperty="#{bindings.ClientCategories.hints.DataIn.name}" filterable="true" sortable="true"
@@ -80,5 +69,43 @@
         </af:inputDate>
       </af:column>
     </af:table>
+    <af:panelBox text="Translated Client Categories" id="pb1">
+      <f:facet name="toolbar">
+        <af:toolbar id="t4">
+          <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+                     disabled="#{!bindings.CreateInsert1.enabled}" id="b4" icon="/img/add.png"/>
+        </af:toolbar>
+      </f:facet>
+      <af:table value="#{bindings.ClientCategoriesTL.collectionModel}" var="row"
+                rows="#{bindings.ClientCategoriesTL.rangeSize}"
+                emptyText="#{bindings.ClientCategoriesTL.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.ClientCategoriesTL.collectionModel.selectedRow}"
+                selectionListener="#{bindings.ClientCategoriesTL.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.ClientCategoriesTL.rangeSize}"
+                filterModel="#{bindings.ClientCategoriesTLQuery.queryDescriptor}" filterVisible="true"
+                queryListener="#{bindings.ClientCategoriesTLQuery.processQuery}" varStatus="vs" id="t3"
+                partialTriggers="::b4 ::t1">
+        <af:column sortProperty="#{bindings.ClientCategoriesTL.hints.Language.name}" filterable="true" sortable="true"
+                   headerText="#{bindings.ClientCategoriesTL.hints.Language.label}" id="c2">
+          <af:selectOneChoice value="#{row.bindings.Language.inputValue}" label="#{row.bindings.Language.label}"
+                              required="#{bindings.ClientCategoriesTL.hints.Language.mandatory}"
+                              shortDesc="#{bindings.ClientCategoriesTL.hints.Language.tooltip}" id="soc1">
+            <f:selectItems value="#{row.bindings.Language.items}" id="si1"/>
+            <f:validator binding="#{row.bindings.Language.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column sortProperty="#{bindings.ClientCategoriesTL.hints.Description.name}" filterable="true"
+                   sortable="true" headerText="#{bindings.ClientCategoriesTL.hints.Description.label}" id="c5">
+          <af:inputText value="#{row.bindings.Description.inputValue}"
+                        label="#{bindings.ClientCategoriesTL.hints.Description.label}"
+                        required="#{bindings.ClientCategoriesTL.hints.Description.mandatory}"
+                        columns="#{bindings.ClientCategoriesTL.hints.Description.displayWidth}"
+                        maximumLength="#{bindings.ClientCategoriesTL.hints.Description.precision}"
+                        shortDesc="#{bindings.ClientCategoriesTL.hints.Description.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.Description.validator}"/>
+          </af:inputText>
+        </af:column>
+      </af:table>
+    </af:panelBox>
   </af:showDetailHeader>
 </ui:composition>

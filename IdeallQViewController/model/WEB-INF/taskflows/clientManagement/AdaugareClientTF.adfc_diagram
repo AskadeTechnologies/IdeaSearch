@@ -42,7 +42,7 @@
       from="MethodCall5"
       to="View2">
       <property
-         name="fromOutcome">afterRefreshClientHeader</property>
+         name="fromOutcome">afterRefreshClientForm</property>
       <property
          name="sdm:polyPoints">R50,368.0,230.5459,487.0,238.68945,L50</property>
    </ControlFlowCase>
@@ -119,7 +119,7 @@
       islink="true"
       id="ControlFlowCase16"
       from="MethodCall15"
-      to="MethodCall5">
+      to="View2">
       <property
          name="fromOutcome">CreateInsert</property>
       <property

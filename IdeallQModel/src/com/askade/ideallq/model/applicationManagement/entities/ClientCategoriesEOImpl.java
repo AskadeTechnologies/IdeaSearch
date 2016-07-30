@@ -26,13 +26,13 @@ public class ClientCategoriesEOImpl extends IdealQEntityImpl {
     public enum AttributesEnum {
         Id,
         CategoryCode,
-        Description,
         DataIn,
         DataOut,
         CreationDate,
         CreatedBy,
         LastUpdateDate,
-        LastUpdatedBy;
+        LastUpdatedBy,
+        ClientCategoriesTL;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -59,13 +59,13 @@ public class ClientCategoriesEOImpl extends IdealQEntityImpl {
 
     public static final int ID = AttributesEnum.Id.index();
     public static final int CATEGORYCODE = AttributesEnum.CategoryCode.index();
-    public static final int DESCRIPTION = AttributesEnum.Description.index();
     public static final int DATAIN = AttributesEnum.DataIn.index();
     public static final int DATAOUT = AttributesEnum.DataOut.index();
     public static final int CREATIONDATE = AttributesEnum.CreationDate.index();
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int LASTUPDATEDATE = AttributesEnum.LastUpdateDate.index();
     public static final int LASTUPDATEDBY = AttributesEnum.LastUpdatedBy.index();
+    public static final int CLIENTCATEGORIESTL = AttributesEnum.ClientCategoriesTL.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -88,5 +88,7 @@ public class ClientCategoriesEOImpl extends IdealQEntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("com.askade.ideallq.model.applicationManagement.entities.ClientCategoriesEO");
     }
+
+
 }
 

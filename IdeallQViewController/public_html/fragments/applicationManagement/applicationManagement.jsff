@@ -9,6 +9,7 @@
     <f:facet name="info"/>
     <af:panelList id="pl1">
       <af:link text="Client Setup" id="l1" action="toClientSetup"/>
+      <af:link text="System Setup" id="l2" action="toSystemSetup"/>
     </af:panelList>
   </af:showDetailHeader>
 </ui:composition>

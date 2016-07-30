@@ -5,7 +5,7 @@
     <f:facet name="context"/>
     <f:facet name="toolbar">
       <af:toolbar id="t1">
-        <af:button text="Back" id="b1" action="backToParent"/>
+        <af:button text="Back" id="b1" action="backToParent" icon="/img/back.png"/>
       </af:toolbar>
     </f:facet>
     <f:facet name="menuBar"/>

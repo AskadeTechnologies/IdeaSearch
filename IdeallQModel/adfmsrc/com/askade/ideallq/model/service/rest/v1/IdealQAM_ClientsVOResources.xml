@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="IdealQAM_ClientsVOResources"
+                Package="com.askade.ideallq.model.service.rest.v1" usageMode="RESTClient">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Clients" RangeSize="5" DataControl="IdealQAMDataControl" id="ClientsIter"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ClientsIter" id="Clients" AccessorFolder="Always">
+      <nodeDefinition DefName="com.askade.ideallq.model.clientManagement.views.ClientsVO"
+                      Name="com.askade.ideallq.model.clientManagement.views.ClientsVO">
+        <Actions>
+          <Action Name="delete" Enabled="#{false}"/>
+          <Action Name="create" Enabled="#{false}"/>
+          <Action Name="update" Enabled="#{false}"/>
+        </Actions>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

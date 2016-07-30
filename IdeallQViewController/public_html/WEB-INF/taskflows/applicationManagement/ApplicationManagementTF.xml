@@ -14,11 +14,21 @@
         <id>ClientSetup</id>
       </task-flow-reference>
     </task-flow-call>
+    <task-flow-call id="SystemSetupTF">
+      <task-flow-reference>
+        <document>/WEB-INF/taskflows/applicationManagement/system/SystemSetupTF.xml</document>
+        <id>SystemSetupTF</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__1">
       <from-activity-id>applicationManagement</from-activity-id>
       <control-flow-case id="__2">
         <from-outcome>toClientSetup</from-outcome>
         <to-activity-id>ClientSetup</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>toSystemSetup</from-outcome>
+        <to-activity-id>SystemSetupTF</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

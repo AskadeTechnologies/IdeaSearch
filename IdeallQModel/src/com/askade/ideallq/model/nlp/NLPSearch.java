@@ -14,7 +14,7 @@ import javax.xml.stream.XMLStreamException;
  */
 public class NLPSearch {
     
-   /* public static Set getSearchItems(String text) throws FileNotFoundException, IOException, XMLStreamException{
+    public static Set getSearchItems(String text) throws FileNotFoundException, IOException, XMLStreamException{
     
     //List<String> whitelist = NLPUtils.getWords(NLPConfig.getConfigParameter("NLP_WHITELIST"));
     
@@ -54,7 +54,7 @@ public class NLPSearch {
     
     return finalSearchItems;
     
-    }*/
+    }
       
      //Returns a Set of strings representing the key items extracted from the user sentence.
      //Example:

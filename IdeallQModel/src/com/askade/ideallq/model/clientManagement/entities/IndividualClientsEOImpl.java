@@ -1,5 +1,7 @@
 package com.askade.ideallq.model.clientManagement.entities;
 
+import com.askade.ideallq.model.overide.IdealQEntityImpl;
+
 import java.math.BigDecimal;
 
 import oracle.jbo.Key;
@@ -26,7 +28,8 @@ public class IndividualClientsEOImpl extends EntityImpl {
         LastUpdateDate,
         LastUpdatedBy,
         Clients;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {

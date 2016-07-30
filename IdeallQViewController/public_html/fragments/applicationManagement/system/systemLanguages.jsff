@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:showDetailHeader text="System Languages" disclosed="true" id="sdh1">
+    <f:facet name="context"/>
+    <f:facet name="toolbar">
+      <af:toolbar id="t2">
+        <af:button text="Back" id="b1" action="back" icon="/img/back.png"/>
+        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                   disabled="#{!bindings.CreateInsert.enabled}" id="b2" icon="/img/add.png"/>
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save" disabled="#{!bindings.Commit.enabled}"
+                   id="b3" icon="/img/save.png"/>
+      </af:toolbar>
+    </f:facet>
+    <f:facet name="menuBar"/>
+    <f:facet name="legend"/>
+    <f:facet name="info"/>
+    <af:table value="#{bindings.Languages.collectionModel}" var="row" rows="#{bindings.Languages.rangeSize}"
+              emptyText="#{bindings.Languages.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.Languages.collectionModel.selectedRow}"
+              selectionListener="#{bindings.Languages.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.Languages.rangeSize}" filterModel="#{bindings.LanguagesQuery.queryDescriptor}"
+              filterVisible="true" queryListener="#{bindings.LanguagesQuery.processQuery}" varStatus="vs" id="t1"
+              partialTriggers="::b2">
+      <af:column sortProperty="#{bindings.Languages.hints.LanguageCode.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.Languages.hints.LanguageCode.label}" id="c1">
+        <af:inputText value="#{row.bindings.LanguageCode.inputValue}"
+                      label="#{bindings.Languages.hints.LanguageCode.label}"
+                      required="#{bindings.Languages.hints.LanguageCode.mandatory}"
+                      columns="#{bindings.Languages.hints.LanguageCode.displayWidth}"
+                      maximumLength="#{bindings.Languages.hints.LanguageCode.precision}"
+                      shortDesc="#{bindings.Languages.hints.LanguageCode.tooltip}" id="it1">
+          <f:validator binding="#{row.bindings.LanguageCode.validator}"/>
+        </af:inputText>
+      </af:column>
+      <af:column sortProperty="#{bindings.Languages.hints.LanguageName.name}" filterable="true" sortable="true"
+                 headerText="#{bindings.Languages.hints.LanguageName.label}" id="c2">
+        <af:inputText value="#{row.bindings.LanguageName.inputValue}"
+                      label="#{bindings.Languages.hints.LanguageName.label}"
+                      required="#{bindings.Languages.hints.LanguageName.mandatory}"
+                      columns="#{bindings.Languages.hints.LanguageName.displayWidth}"
+                      maximumLength="#{bindings.Languages.hints.LanguageName.precision}"
+                      shortDesc="#{bindings.Languages.hints.LanguageName.tooltip}" id="it2">
+          <f:validator binding="#{row.bindings.LanguageName.validator}"/>
+        </af:inputText>
+      </af:column>
+    </af:table>
+  </af:showDetailHeader>
+</ui:composition>
