@@ -39,7 +39,7 @@ public class NLPUtils {
         System.out.println("Working Directory = " +
                       System.getProperty("user.dir"));
 
-        InputStream is = new FileInputStream("../resources/en-sent.bin");
+        InputStream is = new FileInputStream("lib/en-sent.bin");
         SentenceModel model = new SentenceModel(is);
         SentenceDetectorME sdetector = new SentenceDetectorME(model);
 
@@ -121,7 +121,7 @@ public class NLPUtils {
         System.out.println("POS Test: ");
         StringBuilder results = new StringBuilder();
         
-        POSModel model = new POSModelLoader().load(new File("../resources/en-pos-maxent.bin"));
+        POSModel model = new POSModelLoader().load(new File("lib/en-pos-maxent.bin"));
         PerformanceMonitor perfMon = new PerformanceMonitor(System.err, "sent");
         POSTaggerME tagger = new POSTaggerME(model);
     

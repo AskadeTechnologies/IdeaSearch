@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import javax.xml.stream.XMLStreamException;
 
 /**
@@ -59,6 +60,7 @@ public class NLPSearch {
      //Returns a Set of strings representing the key items extracted from the user sentence.
      //Example:
      //NLPSearch.getSearchItemsRemap("This is a test");
+    
     
      public static Set getSearchItemsRemap(String text) throws FileNotFoundException, IOException, XMLStreamException{
     
